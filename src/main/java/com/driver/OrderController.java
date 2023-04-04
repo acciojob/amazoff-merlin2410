@@ -20,10 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
 
 
-    OrderService orderService;
+    OrderService orderService = new OrderService();
 
     public OrderController() {
-        orderService = new OrderService();
+
     }
 
 
