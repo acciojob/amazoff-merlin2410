@@ -15,6 +15,8 @@ public class OrderRepository {
     HashMap<String,DeliveryPartner> deliveryPartnerDb = new HashMap<>();
     HashMap<Order,DeliveryPartner> orderDeliveryPartnerDb = new HashMap<>();
 
+    public OrderRepository() {
+    }
 
     public void addOrder(Order order)
     {

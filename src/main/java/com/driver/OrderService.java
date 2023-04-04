@@ -12,6 +12,9 @@ public class OrderService {
 
     OrderRepository orderRepository = new OrderRepository();
 
+    public OrderService() {
+    }
+
     public void addOrder(Order order)
     {
         orderRepository.addOrder(order);
