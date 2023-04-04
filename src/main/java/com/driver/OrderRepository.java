@@ -18,6 +18,8 @@ public class OrderRepository {
 
     public void addOrder(Order order)
     {
+        if(order==null)
+            return;
         String id = order.getId();
         orderDb.put(id,order);
     }
