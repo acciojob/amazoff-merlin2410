@@ -82,7 +82,7 @@ public class OrderService {
         int deliveryTime = Integer.parseInt(time.substring(0,2))*60 + Integer.parseInt(time.substring(3,5));
         for(Order order: orderList)
         {
-            if(deliveryTime>order.getDeliveryTime())
+            if(deliveryTime<order.getDeliveryTime())
             {
                 countOfOrders++;
             }
