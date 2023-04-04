@@ -100,7 +100,19 @@ public class OrderService {
         {
             maxTime = Math.max(maxTime,order.getDeliveryTime());
         }
-        String time = Integer.toString(maxTime/60)+":"+Integer.toString(maxTime%60);
+        String hrs = "";
+        String min = "";
+        int hours = maxTime/60;
+        int minutes = maxTime%60;
+        if(hours<10)
+            hrs = "0"+hours;
+        else
+            hrs = ""+hours;
+        if(minutes<10)
+            min = "0"+minutes;
+        else
+            min = ""+minutes;
+        String time = hrs+":"+min;
         return time;
     }
 
