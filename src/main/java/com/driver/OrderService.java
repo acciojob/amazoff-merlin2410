@@ -42,7 +42,9 @@ public class OrderService {
     public Integer getOrderCountByPartnerId(String partnerId)
     {
         DeliveryPartner deliveryPartner = getPartnerById(partnerId);
-        return deliveryPartner.getNumberOfOrders();
+        if(deliveryPartner!=null)
+            return deliveryPartner.getNumberOfOrders();
+        return 0;
     }
 
     public List<String> getOrdersByPartnerId(String partnerId)

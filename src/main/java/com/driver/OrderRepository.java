@@ -31,10 +31,14 @@ public class OrderRepository {
 
     public void addOrderPartnerPair(String orderId, String partnerId)
     {
-        Order order = orderDb.get(orderId);
-        DeliveryPartner deliveryPartner = deliveryPartnerDb.get(partnerId);
-        orderDeliveryPartnerDb.put(order,deliveryPartner);
-        deliveryPartner.setNumberOfOrders(deliveryPartner.getNumberOfOrders()+1);
+        if(orderDb.containsKey(orderId) && deliveryPartnerDb.containsKey(partnerId))
+        {
+            Order order = orderDb.get(orderId);
+            DeliveryPartner deliveryPartner = deliveryPartnerDb.get(partnerId);
+            orderDeliveryPartnerDb.put(order,deliveryPartner);
+            deliveryPartner.setNumberOfOrders(deliveryPartner.getNumberOfOrders()+1);
+        }
+
     }
 
     public Order getOrderById(String orderId)
