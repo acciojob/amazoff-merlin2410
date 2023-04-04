@@ -100,8 +100,8 @@ public class OrderService {
         {
             maxTime = Math.max(maxTime,order.getDeliveryTime());
         }
-        String time = (maxTime/60)+":"+(maxTime%60);
-        return time;
+        //String time = (maxTime/60)+":"+(maxTime%60);
+        return Integer.toString(maxTime);
     }
 
     public void deletePartnerById(String partnerId)
